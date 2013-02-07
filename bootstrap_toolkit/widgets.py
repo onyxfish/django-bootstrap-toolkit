@@ -105,3 +105,18 @@ class BootstrapDateInput(forms.DateInput):
         attrs['data-date-language'] = translation.get_language().split('-')[0].lower()
         attrs['data-bootstrap-widget'] = 'datepicker'
         return super(BootstrapDateInput, self).render(name, value, attrs)
+
+
+class BootstrapSwitchInput(forms.CheckboxInput):
+    bootstrap_input_type = 'switch'
+
+    class Media:
+        js = (
+            settings.STATIC_URL + 'switch/js/jquery.switch.js',
+        )
+        css = {
+            'screen': (
+                settings.STATIC_URL + 'switch/css/bootstrap-switch.css',
+            )
+        }
+

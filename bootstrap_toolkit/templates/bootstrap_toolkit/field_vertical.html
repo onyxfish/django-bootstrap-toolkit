@@ -1,5 +1,9 @@
 <div class="control-group{% if field.errors %} error{% endif %}{% if field.field.required %} required{% endif %}">
-    {% if input_type == "checkbox" %}
+    {% if input_type == "switch" %}
+        {% include "bootstrap_toolkit/field_switch.html" %}
+        {% include "bootstrap_toolkit/field_help.html" with display="inline" %}
+        {% include "bootstrap_toolkit/field_errors.html" with display="block" %}
+    {% elif input_type == "checkbox" %}
         <div class="controls">
             {% include "bootstrap_toolkit/field_checkbox.html" %}
             {% include "bootstrap_toolkit/field_help.html" with display="inline" %}
